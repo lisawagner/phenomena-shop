@@ -66,7 +66,7 @@ import {
             </Icon>
           </Link>
 
-          <Link to="product">
+          <Link to={`/product/${item._id}`}>
             <Icon>
               <SearchOutlined />
             </Icon>

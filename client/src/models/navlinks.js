@@ -21,18 +21,22 @@ export const NAVLINKS = [
     iconOpen: <MdAdd />,
     submenu: [
       {
+        id: "02.01",
         title: "Essentials 2022",
         url: "/collections"
       },
       {
+        id: "02.02",
         title: "Couture Cafe",
         url: "/collections"
       },
       {
+        id: "02.03",
         title: "Pandemica",
         url: "/collections"
       },
       {
+        id: "02.04",
         title: "Apoc",
         url: "/collections"
       },
@@ -46,30 +50,37 @@ export const NAVLINKS = [
     iconOpen: <MdAdd />,
     submenu: [
       {
+        id: "03.01",
         title: "Tops",
         url: "/cart"
       },
       {
+        id: "03.02",
         title: "Pants",
         url: "/cart"
       },
       {
+        id: "03.03",
         title: "Sweaters",
         url: "/cart"
       },
       {
+        id: "03.04",
         title: "Coats + Jackets",
         url: "/cart"
       },
       {
+        id: "03.05",
         title: "Dresses",
         url: "/cart"
       },
       {
+        id: "03.06",
         title: "Shirts",
         url: "/cart"
       },
       {
+        id: "03.07",
         title: "Skirts",
         url: "/cart"
       },
@@ -83,38 +94,47 @@ export const NAVLINKS = [
     iconOpen: <MdAdd />,
     submenu: [
       {
+        id: "04.01",
         title: "Bags",
         url: "/products"
       },
       {
+        id: "04.02",
         title: "Hats",
         url: "/products"
       },
       {
+        id: "04.03",
         title: "Belts",
         url: "/products"
       },
       {
+        id: "04.04",
         title: "Scarves",
         url: "/products"
       },
       {
+        id: "04.05",
         title: "Jewelry",
         url: "/products"
       },
       {
+        id: "04.06",
         title: "Watches",
         url: "/products"
       },
       {
+        id: "04.07",
         title: "Wallets",
         url: "/products"
       },
       {
+        id: "04.08",
         title: "Shoes",
         url: "/products"
       },
       {
+        id: "04.08",
         title: "Socks",
         url: "/products"
       },
@@ -128,18 +148,22 @@ export const NAVLINKS = [
     iconOpen: <MdAdd />,
     submenu: [
       {
+        id: "05.01",
         title: "Storybook",
         url: "/phenomena"
       },
       {
+        id: "05.02",
         title: "The World of Phenomena",
         url: "/phenomena"
       },
       {
+        id: "05.03",
         title: "Circle of Life",
         url: "/phenomena"
       },
       {
+        id: "05.04",
         title: "Manifesto",
         url: "/phenomena"
       },

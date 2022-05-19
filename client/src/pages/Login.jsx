@@ -57,9 +57,9 @@ const Link = styled.a`
   font-size: 12px;
   cursor: pointer;
 `;
-const Error = styled.span`
-  color: red;
-`;
+// const Error = styled.span`
+//   color: red;
+// `;
 
 const Login = () => {
   // const [username, setUsername] = useState("");

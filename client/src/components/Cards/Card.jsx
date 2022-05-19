@@ -70,7 +70,8 @@ const Card = ({item}) => {
       
       <DetailsWrap>
         <CardTitle>{item.title}</CardTitle>
-        <Link to="products">
+        {/* <Link to="products"> */}
+        <Link to={`/products/${item.title}`}>
           <CardBtn>discover</CardBtn>
         </Link>
       </DetailsWrap>

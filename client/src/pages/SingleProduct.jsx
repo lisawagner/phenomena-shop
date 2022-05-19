@@ -1,4 +1,4 @@
-import React from 'react'
+import { useLocation } from 'react-router-dom'
 
 import { Add, Remove } from "@mui/icons-material";
 import { Wrapper, ImgContainer, Image, InfoContainer, Title, Desc, Price, FilterContainer, Filter, FilterTitle, FilterColor, FilterSize, FilterSizeOption, AddContainer, AmountContainer, Amount, Button } from './singleProductStyles';
@@ -6,6 +6,9 @@ import { Wrapper, ImgContainer, Image, InfoContainer, Title, Desc, Price, Filter
 
 
 const SingleProduct = () => {
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+
   return (
       <Wrapper>
         <ImgContainer>

@@ -5,7 +5,11 @@ import Products from '../components/Products/Products'
 import styled from "styled-components";
 
 const Title = styled.h1`
+  text-transform: capitalize;
+  font-style: italic;
+  letter-spacing: 1px;
   margin: 20px;
+  color: var(--blue-violet);
 `;
 
 const FilterContainer = styled.div`
@@ -43,19 +47,20 @@ const ProductsPage = () => {
       [e.target.name]: value,
     });
   };
-
+  console.log(filters);
   return (
     <>
-      <Title>Product: {cat}</Title>
+      {/* <Title>Product: {cat}</Title> */}
+      <Title>{cat}</Title>
       <FilterContainer>
         <Filter>
-          <FilterText>Filter Products:</FilterText>
+          <FilterText>Filter:</FilterText>
           <Select name="color" onChange={handleFilters}>
             <Option disabled>Color</Option>
             <Option>white</Option>
             <Option>black</Option>
             <Option>red</Option>
-            <Option>blue</Option>
+            <Option>blue</Option>j
             <Option>yellow</Option>
             <Option>green</Option>
           </Select>
@@ -69,7 +74,7 @@ const ProductsPage = () => {
           </Select>
         </Filter>
         <Filter>
-          <FilterText>Sort Products:</FilterText>
+          <FilterText>Sort:</FilterText>
           <Select onChange={(e) => setSort(e.target.value)}>
             <Option value="newest">Newest</Option>
             <Option value="asc">Price (asc)</Option>

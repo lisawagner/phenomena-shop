@@ -9,41 +9,27 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Redirect,
+  Navigate,
 } from "react-router-dom";
 import Layout from './components/Layout/Layout';
 
 
 const App = () => {
+  const user = true
   return (
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/home" element={<Home />} /> */}
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/product" element={<SingleProduct />} />
+          <Route exact path="/" element={<Home />} />
+          {/* <Route path="/products" element={<ProductsPage />} /> */}
+          <Route path="/products/:category" element={<ProductsPage />} />
+          <Route path="/product/:id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          {/* <Route path="/">
-            <Home />
-          </Route> */}
-          {/* <Route path="/products/:category">
-            <ProductsPage />
-          </Route>
-          <Route path="/product/:id">
-            <Product />
-          </Route>
-          <Route path="/cart">
-            <Cart />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route> */}
+          <Route path="/login" element={user ? <Navigate to="/"/> : <Login />}/>
+          {/* <Route path="/login" element={<Login />}/> */}
+          <Route path="/register" element={user ? <Navigate to="/"/> : <Register />}/>
+          {/* <Route path="/register" element={<Register />} /> */}
+
         </Routes>
       </Layout>
     </Router>
