@@ -1,11 +1,23 @@
-
+import { useState } from 'react';
+import StripeCheckout from 'react-stripe-checkout'
 import { useSelector } from 'react-redux'
 import { Add, Remove } from "@mui/icons-material";
 
 import { Wrapper, Title, Top, TopButton, TopTexts, TopText, Bottom, Info, Product, ProductDetail, Image, Details, ProductName, ProductId, ProductColor, ProductSize, PriceDetail, ProductAmountContainer, ProductAmount, ProductPrice, Hr, Summary, SummaryTitle, SummaryItem, SummaryItemText, SummaryItemPrice, Button} from './cartStyles.js'
 
+
+const STRIPE_KEY = process.env.REACT_APP_STRIPE_KEY
+
 const Cart = () => {
   const cart = useSelector(state => state.cart)
+  const [stripeToken, setStripeToken] = useState(null)
+
+  const onToken = (token) => {
+    setStripeToken(token)
+  }
+
+  console.log(stripeToken);
+
   return (
       <Wrapper>
         <Title>YOUR BAG</Title>
@@ -52,33 +64,6 @@ const Cart = () => {
             ))}
 
             <Hr />
-
-            {/* <Product>
-              <ProductDetail>
-                <Image src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png" />
-                <Details>
-                  <ProductName>
-                    <b>Product:</b> HAKURA T-SHIRT
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b> 93813718293
-                  </ProductId>
-                  <ProductColor color="gray" />
-                  <ProductSize>
-                    <b>Size:</b> M
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>1</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>$20</ProductPrice>
-              </PriceDetail>
-            </Product> */}
-
           </Info>
 
           <Summary>
@@ -99,7 +84,19 @@ const Cart = () => {
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
+              {/* <Button>CHECKOUT NOW</Button> */}
+              <StripeCheckout
+              name="Phenomena Shop"
+              image="https://wikimedia.org/api/rest_v1/media/math/render/svg/c26c105004f30c27aa7c2a9c601550a4183b1f21"
+              billingAddress
+              shippingAddress
+              description={`Your total is $${cart.total}`}
+              amount={cart.total * 100}
+              token={onToken}
+              stripeKey={STRIPE_KEY}
+            >
               <Button>CHECKOUT NOW</Button>
+            </StripeCheckout>
           </Summary>
         </Bottom>
       </Wrapper>
