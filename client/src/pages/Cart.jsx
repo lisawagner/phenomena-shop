@@ -1,12 +1,11 @@
-// import { useSelector } from "react-redux";
 
-import styled from "styled-components";
+import { useSelector } from 'react-redux'
 import { Add, Remove } from "@mui/icons-material";
 
 import { Wrapper, Title, Top, TopButton, TopTexts, TopText, Bottom, Info, Product, ProductDetail, Image, Details, ProductName, ProductId, ProductColor, ProductSize, PriceDetail, ProductAmountContainer, ProductAmount, ProductPrice, Hr, Summary, SummaryTitle, SummaryItem, SummaryItemText, SummaryItemPrice, Button} from './cartStyles.js'
 
 const Cart = () => {
-
+  const cart = useSelector(state => state.cart)
   return (
       <Wrapper>
         <Title>YOUR BAG</Title>
@@ -20,19 +19,21 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
+
+            {cart.products.map( product => (
               <Product>
                 <ProductDetail>
-                  <Image src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1614188818-TD1MTHU_SHOE_ANGLE_GLOBAL_MENS_TREE_DASHERS_THUNDER_b01b1013-cd8d-48e7-bed9-52db26515dc4.png?crop=1xw:1.00xh;center,top&resize=480%3A%2A" />
+                  <Image src={product.img} />
                   <Details>
                     <ProductName>
-                      <b>Product:</b> JESSIE THUNDER SHOES
+                      <b>Product:</b> {product.title}
                     </ProductName>
                     <ProductId>
-                      <b>ID:</b> 93813718293
+                      <b>ID:</b> {product._id}
                     </ProductId>
-                    <ProductColor color="black" />
+                    <ProductColor color={product.color} />
                     <ProductSize>
-                      <b>Size:</b> 37.5
+                      <b>Size:</b> {product.size}
                     </ProductSize>
                   </Details>
                 </ProductDetail>
@@ -40,17 +41,19 @@ const Cart = () => {
                 <PriceDetail>
                   <ProductAmountContainer>
                     <Add />
-                    <ProductAmount>2</ProductAmount>
+                    <ProductAmount>{product.quantity}</ProductAmount>
                     <Remove />
                   </ProductAmountContainer>
                   <ProductPrice>
-                    $30
+                    ${product.price * product.quantity}
                   </ProductPrice>
                 </PriceDetail>
               </Product>
+            ))}
 
             <Hr />
-            <Product>
+
+            {/* <Product>
               <ProductDetail>
                 <Image src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png" />
                 <Details>
@@ -74,14 +77,15 @@ const Cart = () => {
                 </ProductAmountContainer>
                 <ProductPrice>$20</ProductPrice>
               </PriceDetail>
-            </Product>
+            </Product> */}
+
           </Info>
 
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>$ 80</SummaryItemPrice>
+              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
@@ -93,7 +97,7 @@ const Cart = () => {
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$ 80</SummaryItemPrice>
+              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
               <Button>CHECKOUT NOW</Button>
           </Summary>

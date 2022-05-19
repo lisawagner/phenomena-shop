@@ -16,127 +16,132 @@ export const NAVLINKS = [
   {
     id: "02",
     name: "Collections",
-    url: "/favourites",
+    url: "/collections",
     iconClose: <MdRemove />,
     iconOpen: <MdAdd />,
     submenu: [
       {
         id: "02.01",
-        title: "Essentials 2022",
-        url: "/collections"
+        title: "Spring",
+        url: "/products/spring"
       },
       {
-        id: "02.02",
-        title: "Couture Cafe",
-        url: "/collections"
+        id: "02.021",
+        title: "Essentials 2022",
+        url: "/essentials2022"
       },
       {
         id: "02.03",
-        title: "Pandemica",
-        url: "/collections"
+        title: "Couture Cafe",
+        url: "/couturecafe"
       },
       {
         id: "02.04",
+        title: "Pandemica",
+        url: "/pandemica"
+      },
+      {
+        id: "02.05",
         title: "Apoc",
-        url: "/collections"
+        url: "/apoc"
       },
     ]
   },
   {
     id: "03",
     name: "Clothing",
-    url: "/products",
+    url: "/products/clothing",
     iconClose: <MdRemove />,
     iconOpen: <MdAdd />,
     submenu: [
       {
         id: "03.01",
         title: "Tops",
-        url: "/cart"
+        url: "/products/tops"
       },
       {
         id: "03.02",
         title: "Pants",
-        url: "/cart"
+        url: "/products/pants"
       },
       {
         id: "03.03",
         title: "Sweaters",
-        url: "/cart"
+        url: "/products/sweaters"
       },
       {
         id: "03.04",
         title: "Coats + Jackets",
-        url: "/cart"
+        url: "/products/jackets"
       },
       {
         id: "03.05",
         title: "Dresses",
-        url: "/cart"
+        url: "/products/dresses"
       },
       {
         id: "03.06",
         title: "Shirts",
-        url: "/cart"
+        url: "/products/shirts"
       },
       {
         id: "03.07",
         title: "Skirts",
-        url: "/cart"
+        url: "/products/skirts"
       },
     ]
   },
   {
     id: "04",
     name: "Accessories",
-    url: "/products",
+    url: "/products/accessories",
     iconClose: <MdRemove />,
     iconOpen: <MdAdd />,
     submenu: [
       {
         id: "04.01",
         title: "Bags",
-        url: "/products"
+        url: "/products/bags"
       },
       {
         id: "04.02",
         title: "Hats",
-        url: "/products"
+        url: "/products/hats"
       },
       {
         id: "04.03",
         title: "Belts",
-        url: "/products"
+        url: "/products/belts"
       },
       {
         id: "04.04",
         title: "Scarves",
-        url: "/products"
+        url: "/products/scarves"
       },
       {
         id: "04.05",
         title: "Jewelry",
-        url: "/products"
+        url: "/products/jewelry"
       },
       {
         id: "04.06",
         title: "Watches",
-        url: "/products"
+        url: "/products/watches"
       },
       {
         id: "04.07",
         title: "Wallets",
-        url: "/products"
+        url: "/products/wallets"
       },
       {
         id: "04.08",
         title: "Shoes",
-        url: "/products"
+        url: "/products/shoes"
       },
       {
         id: "04.08",
         title: "Socks",
-        url: "/products"
+        url: "/products/socks"
       },
     ]
   },

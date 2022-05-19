@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import SlideNav from './SlideNav'
 
 import {
@@ -14,6 +15,7 @@ import { MobileNavWrap, ActionBtn, UserActions, CountStyle } from './mobileNavSt
 const MobileNav = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
+  const cartQty = useSelector(state => state.cart.quantity)
 
   return (
     <>
@@ -32,14 +34,17 @@ const MobileNav = () => {
           <ActionBtn>
             <Link to="/">
               <MdOutlineFavoriteBorder name="heart-outline" />
-              <CountStyle>0</CountStyle>
+              <CountStyle>2</CountStyle>
             </Link>
           </ActionBtn>
           <ActionBtn>
+
             <Link to="/cart">
               <MdOutlineShoppingCart name="bag-handle-outline" />
-              <CountStyle>0</CountStyle>
+              <CountStyle>{cartQty}</CountStyle>
+              {/* <CountStyle>0</CountStyle> */}
             </Link>
+
           </ActionBtn>
         </UserActions>
 

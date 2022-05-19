@@ -114,13 +114,13 @@ export const ActionBtn = styled.button`
 
 export const Count = styled.span`
   position: absolute;
-    top: -2px;
-    right: -3px;
+    top: -3px;
+    right: -4px;
     background: var(--powder-blue);
     color: var(--white);
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1;
-    padding: 2px 4px;
-    border-radius: 20px;
+    padding: 4px 4px;
+    border-radius: 50%;
 `

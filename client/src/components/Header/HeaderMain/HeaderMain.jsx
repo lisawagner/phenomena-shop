@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import {
   MdSearch,
   MdPersonOutline,
@@ -9,6 +10,9 @@ import {
 import { HeaderMainWrapper, BrandLink, MainContainer, SearchBar, SearchInput, SearchBtn, UserActionsWrap, ActionBtn, Count, TopActionsContainer, ActionSelect } from './headerMainStyles'
 
 const HeaderMain = () => {
+  const cartQty = useSelector(state => state.cart.quantity)
+  console.log(`your cart contains: ${cartQty}`);
+
   return (
     <>
       <HeaderMainWrapper>
@@ -32,14 +36,18 @@ const HeaderMain = () => {
             <ActionBtn>
               <Link to="/" >
                 <MdOutlineFavoriteBorder />
-                <Count>0</Count>
+                {/* <Count>{quantity}</Count> */}
+                <Count>4</Count>
               </Link>
             </ActionBtn>
             <ActionBtn>
+
               <Link to="/cart" >
                 <MdOutlineShoppingCart />
-                <Count>0</Count>
+                <Count>{cartQty}</Count>
+                {/* <Count>7</Count> */}
               </Link>
+
             </ActionBtn>
           </UserActionsWrap>
 
