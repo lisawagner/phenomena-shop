@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import StripeCheckout from 'react-stripe-checkout'
 import { useSelector } from 'react-redux'
-import { Add, Remove, StayPrimaryPortraitRounded } from "@mui/icons-material";
+import { Add, Remove } from "@mui/icons-material";
 import { userRequest } from '../requestMethod.js';
 import { useNavigate } from 'react-router-dom';
 
