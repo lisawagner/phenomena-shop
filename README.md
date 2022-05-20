@@ -8,6 +8,16 @@ Frontend: React, Redux, Axios, Styled Components
 
 Backend: Node, Express, Stripe, MongoDB, Mongoose, JWT
 
+Components
+* Navbar
+* Hero
+* Product List UI
+* Shopping Categories
+* Login & Register Page
+* Single Product Page
+* Shopping Car
+* Footer
+
 ## Development Stages
 
 1. UI/UX
@@ -16,6 +26,7 @@ Backend: Node, Express, Stripe, MongoDB, Mongoose, JWT
 4. Shopping Cart setup and testing
 5. Data-persistence setup and testing
 6. Admin dashboard creation and testing
+7. Firebase images
 
 ## CURRENT ISSUES
 
