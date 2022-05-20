@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import StripeCheckout from 'react-stripe-checkout'
 import { useSelector } from 'react-redux'
-import { Add, Remove } from "@mui/icons-material";
+import { Add, Remove, StayPrimaryPortraitRounded } from "@mui/icons-material";
+import { userRequest } from '../requestMethod.js';
+import { useNavigate } from 'react-router-dom';
 
 import { Wrapper, Title, Top, TopButton, TopTexts, TopText, Bottom, Info, Product, ProductDetail, Image, Details, ProductName, ProductId, ProductColor, ProductSize, PriceDetail, ProductAmountContainer, ProductAmount, ProductPrice, Hr, Summary, SummaryTitle, SummaryItem, SummaryItemText, SummaryItemPrice, Button} from './cartStyles.js'
+
 
 
 const STRIPE_KEY = process.env.REACT_APP_STRIPE_KEY
@@ -11,12 +14,26 @@ const STRIPE_KEY = process.env.REACT_APP_STRIPE_KEY
 const Cart = () => {
   const cart = useSelector(state => state.cart)
   const [stripeToken, setStripeToken] = useState(null)
+  const navigate = useNavigate()
 
   const onToken = (token) => {
     setStripeToken(token)
   }
 
-  console.log(stripeToken);
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await userRequest.post("/checkout/payment", {
+          tokenId: stripeToken.id,
+          amount: 500,
+        })
+        navigate("/success", { data: res.data })
+        // console.log("successful payment sent");
+      } catch {}
+    }
+    stripeToken && makeRequest()
+  }, [stripeToken, cart.total, navigate])
+  
 
   return (
       <Wrapper>

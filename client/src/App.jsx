@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import SingleProduct from "./pages/SingleProduct";
 import ProductsPage from "./pages/ProductsPage";
 import Register from "./pages/Register";
+import Success from "./pages/Success";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import {
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/products/:category" element={<ProductsPage />} />
           <Route path="/product/:id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/success" element={<Success />} />
           <Route path="/login" element={user ? <Navigate to="/"/> : <Login />}/>
           {/* <Route path="/login" element={<Login />}/> */}
           <Route path="/register" element={user ? <Navigate to="/"/> : <Register />}/>
