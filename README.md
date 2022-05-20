@@ -48,3 +48,5 @@ Components
     ```
    
      You need both *minimum-scale* and *initial-scale*.
+     
+     Due to concerns for more bugs showing up between MUI 5 and React 18 dependecies, I switched to Styled Components and React Icons.
