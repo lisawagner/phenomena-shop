@@ -29,7 +29,7 @@ const HeaderMain = () => {
 
           <UserActionsWrap>
             <ActionBtn>
-              <Link to="/" >
+              <Link to="/login" >
                 <MdPersonOutline />
               </Link>
             </ActionBtn>
