@@ -139,7 +139,7 @@ export const NAVLINKS = [
         url: "/products/shoes"
       },
       {
-        id: "04.08",
+        id: "04.09",
         title: "Socks",
         url: "/products/socks"
       },

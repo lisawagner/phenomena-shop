@@ -28,8 +28,8 @@ const SlideNav = ({click, handleClick}) => {
         <MobileMenu>
         {NAVLINKS.map( (item, index) => {
           return (
-            <MenuCategory >
-              <Dropdown item={item} key={index} click={click} handleClick={handleClick}/>
+            <MenuCategory key={item.id} >
+              <Dropdown item={item} key={item.id} click={click} handleClick={handleClick}/>
             </MenuCategory>
           )
         })}

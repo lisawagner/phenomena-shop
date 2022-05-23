@@ -22,7 +22,7 @@ const Dropdown = ( { item, click, handleClick } ) => {
     </SidebarLink>
       {subnav && item.submenu.map((item, index) => {
         return(
-          <DropdownLink onClick={handleClick} to={item.url} key={index} >
+          <DropdownLink onClick={handleClick} to={item.url} key={item.id} >
             <SidebarLabel>{item.title}</SidebarLabel>
           </DropdownLink>
         )

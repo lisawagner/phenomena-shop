@@ -30,7 +30,7 @@ const DesktopDropdown = ({ submenus, dropdown, depthLevel }) => {
   return (
     <DropdownListUL className={`${dropdown ? "show" : ""}`}>
       {submenus.map((submenu, index) => (
-        <MenuItems items={submenu} key={index} depthLevel={depthLevel} />
+        <MenuItems items={submenu} key={submenu.id} depthLevel={depthLevel} />
       ))}
     </DropdownListUL>
   )
