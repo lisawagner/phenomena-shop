@@ -9,7 +9,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
+  Navigate, 
 } from "react-router-dom";
 import Layout from './components/Layout/Layout';
 import { useSelector } from "react-redux";
