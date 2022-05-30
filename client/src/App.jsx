@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 import Success from "./pages/Success";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
+
 import {
   BrowserRouter as Router,
   Routes,

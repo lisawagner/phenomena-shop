@@ -32,6 +32,7 @@ const Cart = () => {
       } catch {}
     }
     stripeToken && makeRequest()
+    console.log("From Cart - Cart Total Is: " + cart.total);
   }, [stripeToken, cart.total, navigate])
   
 
